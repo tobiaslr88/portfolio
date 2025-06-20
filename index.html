@@ -111,16 +111,19 @@
     </div>
   </div>
 
+
 <!-- Modal 3 -->
 <div id="modal3" class="modal">
-  <div class="modal-content large-modal">
-    <span class="close" onclick="closeModal('modal3')">&times;</span>
-    <h2>Verdens første katastrofe</h2>
-    <p>En lydfortælling af [DIT NAVN]</p>
-    <audio controls>
-      <source src="Verdensforstekatastrofe.mp3" type="audio/mpeg">
-      Din browser understøtter ikke afspilning af lyd.
-    </audio>
+  <div class="modal-content large-modal" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <span class="close" onclick="closeModal('modal3')" style="align-self: flex-end;">&times;</span>
+    <h2 style="margin-bottom: 0.5rem;">Verdens første katastrofe</h2>
+    <p style="margin-top: 0; margin-bottom: 1rem;">En lydfortælling af [DIT NAVN]</p>
+    <div style="width: 100%; max-width: 600px;">
+      <audio controls preload="auto" style="width: 100%;">
+        <source src="Verdensforstekatastrofe.mp3" type="audio/mpeg">
+        Din browser understøtter ikke afspilning af lyd.
+      </audio>
+    </div>
   </div>
 </div>
 
