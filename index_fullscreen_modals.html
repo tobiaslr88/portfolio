@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mit Portfolio</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      padding: 2rem;
+      max-width: 800px;
+      width: 100%;
+    }
+    header img {
+      width: 150px;
+      height: auto;
+      margin-right: 2rem;
+      border-radius: 10px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    .gallery img {
+      width: 100%;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+      background: white;
+      margin: 5% auto;
+      padding: 1rem;
+      max-width: 90%;
+      border-radius: 10px;
+      position: relative;
+    }
+    .modal-content.large-modal {
+      width: 90vw;
+      height: 90vh;
+      padding: 1rem;
+      position: relative;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .modal-content.large-modal iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    iframe, audio {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="profil.jpg" alt="Mit billede">
+    <div>
+      <h1>Mit navn er [DIT NAVN]</h1>
+      <p>Her kan du se et udpluk af mit arbejde. Jeg søger nye udfordringer og håber, du vil kigge med.</p>
+    </div>
+  </header>
+
+  <section class="gallery">
+    <img src="billede1.jpg" alt="PDF 1" onclick="openModal('modal1')">
+    <img src="billede2.jpg" alt="Spil" onclick="openModal('modal2')">
+    <img src="billede3.jpg" alt="Podcast" onclick="openModal('modal3')">
+    <img src="billede4.jpg" alt="PDF 2" onclick="openModal('modal4')">
+  </section>
+
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-content large-modal">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <iframe src="KronikWeekendavisenKataFrem.pdf" width="100%" height="600px"></iframe>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-content large-modal">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <iframe src="spil/index.html" width="100%" height="500px"></iframe>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal">
+    <div class="modal-content large-modal">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <audio controls>
+        <source src="podcast.m4a" type="audio/mp4">
+        Din browser understøtter ikke afspilning af lyd.
+      </audio>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal4" class="modal">
+    <div class="modal-content large-modal">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <iframe src="ComputationalThinkingDanskLyrik.pdf"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    window.onclick = function(event) {
+      document.querySelectorAll('.modal').forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
