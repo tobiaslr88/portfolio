@@ -52,8 +52,6 @@
       background: rgba(0,0,0,0.7);
     }
     .modal-content {
-      max-height: 90vh;
-      overflow: auto;
       background: white;
       margin: 5% auto;
       padding: 1rem;
@@ -62,20 +60,19 @@
       position: relative;
     }
     .modal-content.large-modal {
-  width: 90vw;
-  height: 90vh;
-  padding: 1rem;
-  position: relative;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.modal-content.large-modal iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+      width: 90vw;
+      height: 90vh;
+      padding: 1rem;
+      position: relative;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .modal-content.large-modal iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
     .close {
       position: absolute;
       top: 1rem;
@@ -108,15 +105,15 @@
 
   <!-- Modal 1 -->
   <div id="modal1" class="modal">
-    <div class="modal-content">
+    <div class="modal-content large-modal">
       <span class="close" onclick="closeModal('modal1')">&times;</span>
-      <iframe src="KronikWeekendavisenKataFrem.pdf" width="100%" height="90vh"></iframe>
+      <iframe src="KronikWeekendavisenKataFrem.pdf" width="100%" height="600px"></iframe>
     </div>
   </div>
 
   <!-- Modal 2 -->
   <div id="modal2" class="modal">
-    <div class="modal-content">
+    <div class="modal-content large-modal">
       <span class="close" onclick="closeModal('modal2')">&times;</span>
       <iframe src="spil/index.html" width="100%" height="500px"></iframe>
     </div>
@@ -124,7 +121,7 @@
 
   <!-- Modal 3 -->
   <div id="modal3" class="modal">
-    <div class="modal-content">
+    <div class="modal-content large-modal">
       <span class="close" onclick="closeModal('modal3')">&times;</span>
       <audio controls>
         <source src="podcast.m4a" type="audio/mp4">
@@ -133,14 +130,13 @@
     </div>
   </div>
 
-<!-- Modal 4 -->
-<div id="modal4" class="modal">
-  <div class="modal-content large-modal">
-    <span class="close" onclick="closeModal('modal4')">&times;</span>
-    <iframe src="ComputationalThinkingDanskLyrik.pdf"></iframe>
+  <!-- Modal 4 -->
+  <div id="modal4" class="modal">
+    <div class="modal-content large-modal">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <iframe src="ComputationalThinkingDanskLyrik.pdf"></iframe>
+    </div>
   </div>
-</div>
-
 
   <script>
     function openModal(id) {
